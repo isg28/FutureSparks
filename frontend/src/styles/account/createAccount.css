@@ -1,0 +1,111 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f8e3c3; 
+    overflow: hidden; 
+}
+
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    width: 100vw; 
+    position: relative;
+}
+
+.register-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 350px;
+    z-index: 1; 
+}
+
+/* Background Image (BIG) Positioned to the Left */
+.big-background-image {
+    position: absolute;
+    left: 0;
+    width: 55%; 
+    height: 100vh;
+    object-fit: cover; /* Ensures it covers the area */
+    opacity: 0.7; 
+    z-index: 1; 
+    left: 30px;
+    
+}
+
+/* Background Image Positioned to the Left */
+.background-image {
+    display: block;
+    position: absolute;
+    right: 65%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 250px;
+    height: auto;
+    opacity: 1;
+    z-index: 0;
+    animation: hop 2s infinite ease-in-out; 
+}
+
+.left-image {
+    left: 16%; 
+}
+
+.right-image {
+    right: 15%; 
+}
+
+
+@keyframes hop {
+    0%, 100% {
+        transform: translateY(-50%);
+    }
+    50% {
+        transform: translateY(-70%); /* Moves up */
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    text-align: left;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.register-button {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.back-button {
+    margin-top: 10px;
+    background-color: gray;
+    color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
