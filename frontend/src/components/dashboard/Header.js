@@ -11,7 +11,7 @@ function Header() {
             <div className="dashboard-header-container">
                 <h1 onClick={() => navigate("/dashboard")} className="clickable">Learn</h1>
                 <h1 onClick={() => navigate("/activity")} className="clickable">Activities</h1>
-                <h1>Play</h1>
+                <h1 onClick={() => navigate("/gameDashboard")} className="clickable">Play</h1>
             </div>
             <div className="dropdown">
                 <img src={globeIcon} alt="Globe Icon" className="dropdown-icon" />

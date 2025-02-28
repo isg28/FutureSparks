@@ -20,7 +20,7 @@ function Login() {
                     <label>Password</label>
                     <input type="password" placeholder="Type here" />
 
-                    <button type="submit" className="login-button">Sign In</button>
+                    <button type="submit" className="login-button" onClick={() => navigate("/dashboard")}> Sign In</button>
                 </form>
                 <a href="#" className="forgot-password">Forgot password?</a>
                 <button className="register-button" onClick={() => navigate("/createAccount")}>

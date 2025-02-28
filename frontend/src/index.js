@@ -8,6 +8,7 @@ import Login from './components/account/login';
 import Register from './components/account/createAccount';
 import LearnDashboard from './components/dashboard/learnDashboard';
 import Activity from './components/dashboard/activity';
+import GameDashboard from './components/dashboard/gameDashboard';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,6 +20,7 @@ root.render(
         <Route path = "/createAccount" element={<Register />}/>
         <Route path="/dashboard" element={<LearnDashboard />} />
         <Route path="/activity" element={<Activity />} />
+        <Route path="/gameDashboard" element={<GameDashboard />}/>
         
 
       </Routes>
