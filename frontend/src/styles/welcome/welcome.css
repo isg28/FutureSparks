@@ -1,72 +1,118 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; 
-}
-
-html, body {
-    height: 100%;
-    overflow-x: hidden; 
-}
-
-body {
-    background-color: blanchedalmond;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh; 
-    width: 100vw; 
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden; 
-    align-items: center;
-    justify-content: center;
-}
 
 .home-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 80vh;
-    width: 80vw;
-    padding: 5%;
-    background: #f7b141; 
-    border-radius: 25px;
+    height: 102vh;
+    width: 100vw;
+    background: linear-gradient(to bottom, #8abfff, #32CD32); /* Gradient from blue to green */
     position: relative;
-    overflow:hidden;
+    overflow: hidden;
 }
 
-/* Light Shadow of the Image in the Background */
-.image-shadow {
+.image-container img {
     position: absolute;
-    right: -250px; 
-    bottom: -50px;
-    width: 600px;
-    height: 600px;
-    opacity: 0.15; /* Light shadow effect */
-    filter: blur(30px); /* Soft blur effect */
-    z-index: 0;
-}
-
-/* Move Rotating Image to the Left */
-.image-container {
-    position: absolute;
-    left: -100px; 
-    bottom: -100px; 
-    width: 900px; 
-    height: 300px;
+    left: -350px;
+    top: 360px;
+    width: 60%; 
+    height: auto;
     overflow: hidden; 
 }
 
-.rotating-image {
-    width: 400px; 
-    height: 400px;
-    animation: rotate 10s infinite linear;
+/*"Welcome To" text*/
+.handwritten-image {
+    position: absolute;
+    left: 130px;
+    top: -210px;
+    width: 80%;
+    height: auto;
+    overflow: visible;
 }
 
+/*"Future" text*/
+.handwritten-image2 {
+    position: absolute;
+    left: 510px;
+    top: 100px;
+    width: 780px;
+    height: 670px;
+    overflow: visible;
+}
 
-/* Rotation Keyframes */
+/*"Sparks" text*/
+.handwritten-image3 {
+    position: absolute;
+    left: 710px;
+    top: 300px;
+    width: 780px;
+    height: 670px;
+    overflow: visible;
+}
+
+/*Animation for sparks*/
+@keyframes rotate-spark-1 { 
+    0%, 100% { transform: rotate(0deg); } 
+    50% { transform: rotate(5deg); } 
+}
+
+@keyframes rotate-spark-2 {
+    0%, 100% { transform: rotate(0deg); } 
+    50% { transform: rotate(-7deg); } 
+}
+
+@keyframes rotate-spark-3 {
+    0%, 100% { transform: rotate(0deg); } 
+    50% { transform: rotate(2.5deg); }
+}
+
+.spark-1 {
+    position: absolute;
+    left: 980px;
+    top: 180px;
+    width: 650px;
+    height: 550px;
+    overflow: visible;
+    animation: rotate-spark-1 2s steps(2) infinite; 
+}
+
+.spark-2 { 
+    position: absolute;
+    left: 980px;
+    top: 180px;
+    width: 650px;
+    height: 550px;
+    overflow: visible;
+    animation: rotate-spark-2 2s steps(2) infinite;
+}
+
+.spark-3 { 
+    position: absolute;
+    left: 980px;
+    top: 180px;
+    width: 650px;
+    height: 550px;
+    overflow: visible;
+    animation: rotate-spark-3 2s steps(2) infinite; 
+}
+
+/*Red start button*/
+.start-text { 
+    position: absolute;
+    right: 400px;
+    top: 650px;
+    width: 350px;
+    height: 300px;
+    overflow: visible;
+}
+
+/*Rotation of Kids on Planet image*/
+.rotating-image {
+    width: 600px; 
+    height: 600px;
+    animation: rotate 20s infinite linear;
+}
+
 @keyframes rotate {
     from {
         transform: rotate(0deg);
@@ -74,50 +120,4 @@ body {
     to {
         transform: rotate(360deg);
     }
-}
-
-/* Black Welcome Title */
-#welcomeTitle {
-    font-size: clamp(2rem, 7.5vw, 10rem);
-    top: 10%;
-    color: black; 
-    text-align: center;
-    font-family: 'Orelega One', cursive;
-    font-weight: bold;
-    text-transform: uppercase;
-    position: relative;
-    top: -40px; /* Adjust this value to move it higher */
-
-}
-
-.start-text {
-    position: absolute;
-    right: 10%;
-    top: 80%;
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: rgb(0, 0, 0);
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-}
-
-/* Shine Effect */
-.start-text::after {
-    content: "✨";
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    font-size: 1.5rem;
-    opacity: 0.5;
-    transition: 0.3s;
-}
-
-.start-text:hover {
-    transform: scale(1.2); 
-}
-
-.start-text:hover::after {
-    opacity: 1;
-    transform: scale(1.3);
 }

@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+
+import './styles/global/global.css';
+
 import Welcome from './components/welcome/welcome';
 import Login from './components/account/login';
 import Register from './components/account/createAccount';
