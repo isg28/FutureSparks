@@ -1,7 +1,0 @@
-SECRET_KEY = 'django-insecure-!(hg^r5d5_787q52j2-qgwnxla03yvblpp1dutixkhnh2&6#9'
-
-DEBUG = True
-
-ALLOWED_HOSTS = ''
-
-DATABASE_URL = 'mongodb+srv://isabelsg:HAne1xhnwpfTQJGk@cluster0.objot.mongodb.net/'

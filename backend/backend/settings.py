@@ -14,7 +14,7 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 
-load_dotenv
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,11 +28,6 @@ SECRET_KEY = os.getenv('SECRET_KEY')  # Load SECRET_KEY from .env
 DEBUG = os.getenv('DEBUG') == 'True'  # Convert to boolean
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -43,11 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'users',
     'corsheaders',
     'rest_framework',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -88,6 +85,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 from mongoengine import connect
 
 connect(
+    db = "FutureSparks",
     host=os.getenv('DATABASE_URL'),  # Load the MongoDB URL from .env
     ssl=True
 )
