@@ -1,11 +1,12 @@
-body, html {
+/* General body and HTML styling */
+html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #f8e3c3; 
-    overflow: hidden; 
+    background: linear-gradient(to bottom, #8abfff, #32CD32); /* Gradient from blue to green */
 }
 
+/* Register container to center content */
 .register-container {
     display: flex;
     justify-content: center;
@@ -15,43 +16,43 @@ body, html {
     position: relative;
 }
 
+/* Register box container */
 .register-box {
     background: white;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 350px;
+    width: 400px;  /* Adjust width for better alignment */
+    position: relative;
     z-index: 1; 
 }
 
-/* Background Image (BIG) Positioned to the Left */
+/* Background image - BIG image positioned to the left */
 .big-background-image {
     position: absolute;
     left: 0;
-    width: 55%; 
+    width: 50%;  /* Slightly reduce width for better balance */
     height: 100vh;
     object-fit: cover; /* Ensures it covers the area */
     opacity: 0.7; 
-    z-index: 1; 
-    left: 30px;
-    
+    z-index: 0;  /* Keep background behind the register box */
 }
 
-/* Background Image Positioned to the Left */
+/* Secondary background image */
 .background-image {
-    display: block;
     position: absolute;
     right: 65%;
     top: 50%;
     transform: translateY(-50%);
-    width: 250px;
+    width: 200px;
     height: auto;
     opacity: 1;
     z-index: 0;
     animation: hop 2s infinite ease-in-out; 
 }
 
+/* Specific styling for the left and right background images */
 .left-image {
     left: 16%; 
 }
@@ -60,7 +61,7 @@ body, html {
     right: 15%; 
 }
 
-
+/* Animation for bouncing effect */
 @keyframes hop {
     0%, 100% {
         transform: translateY(-50%);
@@ -70,42 +71,58 @@ body, html {
     }
 }
 
+/* Form container styling */
 form {
     display: flex;
     flex-direction: column;
+    padding: 0;
+    margin: 0;
 }
 
+/* Label styling */
 label {
     text-align: left;
     margin-bottom: 5px;
     font-size: 14px;
+    font-weight: bold;
 }
 
+/* Input fields styling */
 input {
-    padding: 10px;
-    margin-bottom: 15px;
+    padding: 12px;
+    margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 100%;
+    box-sizing: border-box;
 }
 
+/* Register button styling */
 .register-button {
     background-color: black;
     color: white;
-    padding: 10px;
+    padding: 12px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
+    font-weight: bold;
 }
 
+/* Back button styling */
 .back-button {
     margin-top: 10px;
     background-color: gray;
     color: white;
-    padding: 8px;
+    padding: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
+    font-weight: bold;
+}
+
+/* Hover effect for buttons */
+.register-button:hover, .back-button:hover {
+    background-color: #444; /* Darken color on hover */
 }

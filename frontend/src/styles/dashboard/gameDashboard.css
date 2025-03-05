@@ -4,8 +4,10 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background-color: #f8f8f8;
+    background: linear-gradient(to bottom, #b8d8ff, #c4ffc4); /* Gradient from blue to green */
 }
+
+
 
 .game-page-title {
     font-size: 28px;
@@ -17,8 +19,11 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    width: 90%;
-    margin-top: 20px;
+    width: 80%;
+    height: auto;
+    margin-right: 107px;
+    margin-left: -20px;
+    margin-top: 200px;
 }
 
 .game-card {

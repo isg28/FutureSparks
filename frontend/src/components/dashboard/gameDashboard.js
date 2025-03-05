@@ -12,7 +12,7 @@ function GameDashboard() {
     return (
         <div className="gameDashboard-container">
             <Header /> {/* Always Show Header */}
-            <h1 className="game-page-title">Games</h1>
+           
             <div className="game-grid">
                 {Array.from({ length: 6 }).map((_, index) => (
                     <div key={index} className="game-card">

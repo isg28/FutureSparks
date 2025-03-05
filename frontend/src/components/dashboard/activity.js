@@ -9,7 +9,7 @@ function Activity() {
     return (
         <div className="activity-container">
             <Header /> {/* Always Show Header */}
-            <h1 className="page-title">Activities</h1>
+            
             <div className="activity-grid">
                 {Array.from({ length: 6 }).map((_, index) => (
                     <div key={index} className="activity-card">

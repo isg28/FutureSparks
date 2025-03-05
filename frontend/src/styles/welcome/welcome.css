@@ -99,10 +99,10 @@
 /*Red start button*/
 .start-text { 
     position: absolute;
-    right: 400px;
+    right: 300px;
     top: 650px;
-    width: 350px;
-    height: 300px;
+    width: 550px;
+    height: 500px;
     overflow: visible;
 }
 
