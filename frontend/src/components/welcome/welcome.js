@@ -10,9 +10,21 @@ import spark2 from "../../assets/welcome/spark2.PNG";
 import spark3 from "../../assets/welcome/spark3.PNG";
 import start_handwritten from "../../assets/welcome/start_handwritten.PNG";
 
-
 function Home() {
     const navigate = useNavigate();
+
+    // Function to handle start button click (plays sound and navigates to /login)
+    const handleStartClick = () => {
+        console.log("Start button clicked!"); // Check if the function is triggered
+        
+        // Dynamically create an audio element and play the sound
+        const audio = new Audio("/click_sfx.m4a"); // Path to your sound file in public folder
+        audio.play().catch((error) => {
+            console.error("Audio play error: ", error); // Log any error during audio play
+        });
+
+        navigate("/login"); // Navigate to the login page
+    };
 
     return (
         <div className="home-container">
@@ -46,10 +58,7 @@ function Home() {
                 </div>
 
                 <div className="main-item">
-                    <img src={start_handwritten} alt="Start Handwritten" className="start-text" />
-                </div>
-
-                <div className="main-item start-text" onClick={() => navigate("/login")}>
+                    <img src={start_handwritten} alt="Start Handwritten" className="start-text" onClick={handleStartClick} />
                 </div>
             </div>
         </div>
