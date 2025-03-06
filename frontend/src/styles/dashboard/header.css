@@ -30,6 +30,10 @@
     cursor: pointer;
     text-align: center;
 }
+
+
+
+
 /* Dropdown container */
 .dropdown {
     position: absolute;
@@ -55,6 +59,7 @@
     width: 80px;  /* Width */
     height: 700px;  /* Height */
     padding: 10px;  
+    background-color: #ffffff;
     outline: 3px solid #d6f1ff;  /* Orange outline */
 
     font-size: 30px;
