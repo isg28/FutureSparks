@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/account/createAccount.css";
-import groupCheer from "../../assets/account/groupCheer.png";
+//import groupCheer from "../../assets/account/groupCheer.png";
+import colorfulBackground from "../../assets/account/colorfulBackground.png";
 
 function CreateAccount() {
     const navigate = useNavigate();
@@ -51,10 +52,12 @@ function CreateAccount() {
     return (
         <div className="register-container">
 {/*                 <img src={groupCheer} alt="Cheering Group" className="big-background-image" />
- */}
-            <img src={groupCheer} alt="Cheering Group" className="background-image left-image" />
+            <img src={groupCheer} alt="Cheering Group" className="background-image left-image" />*/}
+            <div className="background-container2">
+                    <img src={colorfulBackground} alt="background" className="background-container" />
+                </div>
             <div className="register-box">
-                <h2>Create Account</h2>
+                <h2>CREATE ACCOUNT</h2>
                 
                 <form onSubmit={handleSubmit}>
                     <label>Username</label>
@@ -76,7 +79,7 @@ function CreateAccount() {
                 </button>
             </div>
 
-             <img src={groupCheer} alt="Cheering Group" className="background-image right-image" />
+             {/*<img src={groupCheer} alt="Cheering Group" className="background-image right-image" />*/}
              </div>
     );
 }

@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/account/login.css";
+import colorfulBackground from "../../assets/account/colorfulBackground.png";
 
 function Login() {
     const navigate = useNavigate();
+
     const [formData, setFormData] = useState({
-        login: "",  
+        login: "",
         password: ""
     });
 
@@ -15,7 +17,7 @@ function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+        
         try {
             const response = await fetch("http://localhost:8000/users/login/", {
                 method: "POST",
@@ -39,15 +41,14 @@ function Login() {
         }
     };
 
-
     return (
         <div className="login-container">
-            <div className="flag-banner-container">
-                <div className="flag-banner"></div>
+            <div className="background-container">
+                <img src={colorfulBackground} alt="background" className="background-container" />
             </div>
 
             <div className="login-box">
-                <h2>Sign In</h2>
+                <h2>SIGN IN</h2>
                 <form onSubmit={handleSubmit}>
                     <label>Username or Email</label>
                     <input type="text" name="login" placeholder="Enter email or username" onChange={handleChange} required />
@@ -56,10 +57,10 @@ function Login() {
                     <input type="password" name="password" placeholder="Type here" onChange={handleChange} required />
 
                     <button type="submit" className="login-button">Sign In</button>
+                </form>
 
-{/*                     <button type="submit" className="login-button" onClick={() => navigate("/dashboard")}> Sign In</button>
- */}                </form>
                 <a href="#" className="forgot-password">Forgot password?</a>
+
                 <button className="register-button" onClick={() => navigate("/createAccount")}>
                     Register Here
                 </button>

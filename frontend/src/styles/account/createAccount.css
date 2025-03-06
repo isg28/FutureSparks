@@ -6,6 +6,18 @@ html, body {
     background: linear-gradient(to bottom, #8abfff, #32CD32); /* Gradient from blue to green */
 }
 
+.background-container2 { 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 80%;
+    z-index: 1; /* Ensures it stays in the background */
+}
 /* Register container to center content */
 .register-container {
     display: flex;
@@ -18,26 +30,31 @@ html, body {
 
 /* Register box container */
 .register-box {
-    background: white;
+    background: #C7F7B5;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    font-family: "Schoolbell", cursive;
+    font-size: 25px;
     text-align: center;
-    width: 400px;  /* Adjust width for better alignment */
+    width: 600px;  /* Adjust width for better alignment */
     position: relative;
     z-index: 1; 
+    border: 10px solid #59c5ff; /* Dark green border */
 }
 
+
 /* Background image - BIG image positioned to the left */
+/*
 .big-background-image {
     position: absolute;
     left: 0;
-    width: 50%;  /* Slightly reduce width for better balance */
+    width: 50%; 
     height: 100vh;
-    object-fit: cover; /* Ensures it covers the area */
-    opacity: 0.7; 
-    z-index: 0;  /* Keep background behind the register box */
+    object-fit: cover; 
+    z-index: 0;  
 }
+*/
 
 /* Secondary background image */
 .background-image {
@@ -83,7 +100,7 @@ form {
 label {
     text-align: left;
     margin-bottom: 5px;
-    font-size: 14px;
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -92,19 +109,25 @@ input {
     padding: 12px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
+    font-family: "Schoolbell", cursive;
+    font-size: 20px;
     border-radius: 5px;
     width: 100%;
+    height: 70px;
     box-sizing: border-box;
 }
 
 /* Register button styling */
 .register-button {
-    background-color: black;
+    background-color: rgb(49, 148, 14);
     color: white;
     padding: 12px;
     border: none;
     border-radius: 5px;
+    font-family: "Finger Paint", sans-serif;
+    font-size: 20px;
     cursor: pointer;
+    height: 60px;
     width: 100%;
     font-weight: bold;
 }
@@ -112,17 +135,20 @@ input {
 /* Back button styling */
 .back-button {
     margin-top: 10px;
-    background-color: gray;
+    background-color: rgb(49, 148, 14);
     color: white;
     padding: 10px;
     border: none;
+    font-family: "Finger Paint", sans-serif;
+    font-size: 20px;
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
+    height: 60px;
     font-weight: bold;
 }
 
 /* Hover effect for buttons */
 .register-button:hover, .back-button:hover {
-    background-color: #444; /* Darken color on hover */
+    background-color: #062a49; /* Darken color on hover */
 }

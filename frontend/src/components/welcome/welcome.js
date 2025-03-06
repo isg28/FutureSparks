@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/welcome/welcome.css";
 import welcomeImage from "../../assets/welcome/welcome_image.png";
@@ -9,26 +9,33 @@ import spark1 from "../../assets/welcome/spark1.PNG";
 import spark2 from "../../assets/welcome/spark2.PNG";
 import spark3 from "../../assets/welcome/spark3.PNG";
 import start_handwritten from "../../assets/welcome/start_handwritten.PNG";
+import colorfulBackground from "../../assets/account/colorfulBackground.png";
+import clickSound1 from "../../assets/click_sfx.m4a";  // Assuming your first click sound is here
+import clickSound2 from "../../assets/click2_sfx.m4a";  // Assuming your second click sound is here
 
 function Home() {
     const navigate = useNavigate();
+    const [clickSoundIndex, setClickSoundIndex] = useState(0); // State to alternate between sounds
 
-    // Function to handle start button click (plays sound and navigates to /login)
+    // Function to play the alternating click sounds
+    const playClickSound = () => {
+        const audio = new Audio(clickSoundIndex === 0 ? clickSound1 : clickSound2);
+        audio.play();
+        setClickSoundIndex((prevIndex) => (prevIndex === 0 ? 1 : 0)); // Alternate the sound
+    };
+
+    // Function to handle start button click (navigates to /login)
     const handleStartClick = () => {
-        console.log("Start button clicked!"); // Check if the function is triggered
-        
-        // Dynamically create an audio element and play the sound
-        const audio = new Audio("/click_sfx.m4a"); // Path to your sound file in public folder
-        audio.play().catch((error) => {
-            console.error("Audio play error: ", error); // Log any error during audio play
-        });
-
+        playClickSound(); // Play the click sound
         navigate("/login"); // Navigate to the login page
     };
 
     return (
         <div className="home-container">
             <div className="main-container">
+                <div className="welcome-background">
+                    <img src={colorfulBackground} alt="background" className="welcome-background" />
+                </div>
                 <div className="image-container">
                     <img src={welcomeImage} alt="Welcome" className="rotating-image" />
                 </div>
