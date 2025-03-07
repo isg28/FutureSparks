@@ -68,7 +68,7 @@ body, html {
 /* The login box style */
 .login-box {
     background: #C7F7B5;
-    border: 10px solid #59c5ff; /* Dark green border */
+    border: 10px solid #59c5ff;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);

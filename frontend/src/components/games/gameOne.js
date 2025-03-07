@@ -22,6 +22,13 @@ import curtainTop from "../../assets/game/gameOne/curtain_top.png";
 import curtainUnderneathTop from "../../assets/game/gameOne/curtain-underneathtop.png"; 
 import woodBackground from "../../assets/game/gameOne/woodbackground.png";
 
+import water1 from "../../assets/game/gameOne/water1.wav";
+import water2 from "../../assets/game/gameOne/water2.wav";
+import water3 from "../../assets/game/gameOne/water3.wav";
+import water4 from "../../assets/game/gameOne/water4.wav";
+import water5 from "../../assets/game/gameOne/water5.wav";
+import gameMusic from "../../assets/game/gameOne/game_music.mp3"
+
 // Start Screen Component
 const StartScreen = ({ onStartEasy, onStartHard, onStartAI, onLeadership }) => {
     return (
@@ -178,52 +185,86 @@ function GameOne() {
         };
     }, [gameStarted, difficulty])
 
-    // Randomly set multiple images to leak with debugging
-    useEffect(() => {
-        if (gameStarted && !leakRef.current) {
-            leakRef.current = setInterval(() => {
-                if (timeLeft <= 0) {
-                    clearInterval(leakRef.current);
-                    leakRef.current = null;
-                    return;
-                }
+    const waterSounds = [water1, water2, water3, water4, water5];
+    let currentSoundIndex = 0; // To cycle through sounds
+    
+    // Function to play the next water sound in the cycle
+    const playWaterSound = () => {
+        if (gameOver) return; // Prevent playing sound after game is over
+        const sound = waterSounds[currentSoundIndex];
+        const audio = new Audio(sound);
+        audio.play();
+    
+        // Move to the next sound in the cycle
+        currentSoundIndex = (currentSoundIndex + 1) % waterSounds.length;
+    };
+    
+// Create a new Audio object for background music and set volume
+const backgroundMusic = new Audio(gameMusic);
+backgroundMusic.loop = true; // Make the music loop
+backgroundMusic.volume = 0.2; // Set the volume to 20% for a low volume
 
-                // Randomly decide how many images to leak based on difficulty
-                const maxLeaks = Math.min(difficulty === "hard" ? 4 : 3, images.length);
-                const numLeaks = Math.floor(Math.random() * maxLeaks) + 1;
-
-                // Get indices of non-leaking images
-                const nonLeakingIndices = images
-                    .map((image, index) => (!image.isLeaking ? index : -1))
-                    .filter((index) => index !== -1);
-
-                if (nonLeakingIndices.length > 0) {
-                    // Shuffle indices to randomize selection
-                    for (let i = nonLeakingIndices.length - 1; i > 0; i--) {
-                        const j = Math.floor(Math.random() * (i + 1));
-                        [nonLeakingIndices[i], nonLeakingIndices[j]] = [nonLeakingIndices[j], nonLeakingIndices[i]];
-                    }
-                    const selectedIndices = nonLeakingIndices.slice(0, Math.min(numLeaks, nonLeakingIndices.length));
-
-                    // Set selected images to leaking
-                    setImages((prevImages) =>
-                        prevImages.map((image, index) =>
-                            selectedIndices.includes(index)
-                                ? { ...image, isLeaking: true }
-                                : image
-                        )
-                    );
-                }
-            }, difficulty === "hard" ? 1500 : 2000); // Faster leaks for Hard
+// Randomly set multiple images to leak with debugging
+useEffect(() => {
+    if (gameStarted && !leakRef.current) {
+        // Start background music when the game starts
+        if (gameStarted && !backgroundMusic.isPlaying) {
+            backgroundMusic.play();
         }
-        return () => {
-            if (leakRef.current) {
+        
+        leakRef.current = setInterval(() => {
+            if (timeLeft <= 0 || gameOver) {
                 clearInterval(leakRef.current);
                 leakRef.current = null;
+                // Stop the background music when the game ends
+                backgroundMusic.pause();
+                backgroundMusic.currentTime = 0; // Reset the music to the beginning
+                return;
             }
-        };
-    }, [gameStarted, difficulty]);
 
+            // Randomly decide how many images to leak based on difficulty
+            const maxLeaks = Math.min(difficulty === "hard" ? 4 : 3, images.length);
+            const numLeaks = Math.floor(Math.random() * maxLeaks) + 1;
+
+            // Get indices of non-leaking images
+            const nonLeakingIndices = images
+                .map((image, index) => (!image.isLeaking ? index : -1))
+                .filter((index) => index !== -1);
+
+            if (nonLeakingIndices.length > 0) {
+                // Shuffle indices to randomize selection
+                for (let i = nonLeakingIndices.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [nonLeakingIndices[i], nonLeakingIndices[j]] = [nonLeakingIndices[j], nonLeakingIndices[i]];
+                }
+                const selectedIndices = nonLeakingIndices.slice(0, Math.min(numLeaks, nonLeakingIndices.length));
+
+                // Set selected images to leaking
+                setImages((prevImages) =>
+                    prevImages.map((image, index) =>
+                        selectedIndices.includes(index)
+                            ? { ...image, isLeaking: true }
+                            : image
+                    )
+                );
+
+                // Play the next water sound when a leak is created
+                playWaterSound();
+            }
+        }, difficulty === "hard" ? 1500 : 2000); // Faster leaks for Hard
+    }
+    return () => {
+        if (leakRef.current) {
+            clearInterval(leakRef.current);
+            leakRef.current = null;
+        }
+        // Stop the background music when the component unmounts or game ends
+        backgroundMusic.pause();
+        backgroundMusic.currentTime = 0; // Reset the music to the beginning
+    };
+}, [gameStarted, difficulty, gameOver]);
+
+    
     useEffect(() => {
         if (gameStarted && difficulty === "ai" && !gameOver && !aiRef.current) {
             console.log("AI mode started, setting up interval...");
@@ -245,7 +286,7 @@ function GameOne() {
             }
         };
     }, [gameStarted, difficulty, images, gameOver]);
-
+    
     // Reset game and return to the Start Screen
     const resetGame = () => {
         // Reset game states
@@ -260,7 +301,7 @@ function GameOne() {
             if (ref.current) clearInterval(ref.current);
             ref.current = null;
         });
-
+    
         if (timerRef.current) {
             clearInterval(timerRef.current);
             timerRef.current = null;
@@ -273,6 +314,10 @@ function GameOne() {
             clearInterval(leakRef.current);
             leakRef.current = null;
         }
+    
+        // Stop the background music when the game ends
+        backgroundMusic.pause();
+        backgroundMusic.currentTime = 0; // Reset to the start of the track
     };
 
     const goToLeadership = () => {
