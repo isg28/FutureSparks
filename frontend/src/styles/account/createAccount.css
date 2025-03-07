@@ -152,3 +152,77 @@ input {
 .register-button:hover, .back-button:hover {
     background-color: #062a49; /* Darken color on hover */
 }
+/* Acknowledgment banner container */
+.banner-container {
+    position: fixed;
+    top: 9%;
+    left: 4%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1; /* Ensure it's below the text and icon */
+    width: 1500px;
+    height: 100vh; /* Set the container height to the full height of the viewport */
+
+    position: relative; /* Ensure the container can hold other elements above */
+}
+
+.banner-image {
+    width: 120%; /* Adjust the size as needed */
+    position: absolute; /* Absolute positioning to ensure it stays within the container */
+    top: -80px; /* Moves the image upwards */
+    z-index: 0; /* Keep it behind the text and icon */
+}
+
+.banner-heading {
+    margin-top: 0px;
+    padding-top: 70px;
+    padding-left: 100px;
+    padding-right: 160px;
+    font-size: 70px;
+    font-family: "Schoolbell", cursive;
+    color: #f6eadf;
+    position: relative;
+    z-index: 2; /* Above the image */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Black shadow with some blur */
+}
+
+
+.banner-text {
+    margin-top: -80px;
+    padding-top: 0px;
+    padding-left: 100px;
+    padding-right: 160px;
+    font-size: 40px;
+    font-family: "Schoolbell", cursive;
+    color: #f6eadf;
+    position: relative;
+    z-index: 2; /* Above the image */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Black shadow with some blur */
+}
+
+.batsu-icon {
+    width: 100px;
+    height: 100px;
+    position: absolute; /* Absolute positioning to place it above text */
+    top: 150px; /* Adjust the top value as needed */
+    right: 180px;
+    z-index: 3; /* Ensure it's the topmost element */
+}
+
+/* Close button styling */
+.close-button {
+    margin-top: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
