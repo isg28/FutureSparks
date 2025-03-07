@@ -2,22 +2,36 @@ import React, { useState } from "react";
 import Header from "./Header";
 import "../../styles/dashboard/learnDashboard.css";
 
+// Import images
+import chatIcon from "../../assets/dashboard/learnDashboard/chat.png";
+import learnFoodbank from "../../assets/dashboard/learnDashboard/learn_foodbank.jpg";
+import learnSlide from "../../assets/dashboard/learnDashboard/learn_slide.png";
+import learnSchool from "../../assets/dashboard/learnDashboard/learn_school.jpg";
+import learnResearch from "../../assets/dashboard/learnDashboard/learn_research.jpg";
+import learnRecycle from "../../assets/dashboard/learnDashboard/learn_recycle.png";
+import learnPark from "../../assets/dashboard/learnDashboard/learn_park.png";
+import learnGarden from "../../assets/dashboard/learnDashboard/learn_garden.png";
+import learnFish from "../../assets/dashboard/learnDashboard/learn_fish.png";
+import learnFamily from "../../assets/dashboard/learnDashboard/learn_family.png";
+import learnDolphin from "../../assets/dashboard/learnDashboard/learn_dolphin.png";
+import learnBank from "../../assets/dashboard/learnDashboard/learn_bank.png";
+
 function LearnDashboard() {
     const [currentPage, setCurrentPage] = useState(0);
 
     const cards = [
-        { title: "Card 1", image: "../../assets/dashboard/learnDashboard/learn_foodbank.jpg", description: "Description for Card 1" },
-        { title: "Card 2", image: "../../assets/dashboard/learnDashboard/learn_slide.png", description: "Description for Card 2" },
-        { title: "Card 3", image: "../../assets/dashboard/learnDashboard/learn_school.jpg", description: "Description for Card 3" },
-        { title: "Card 4", image: "../../assets/dashboard/learnDashboard/learn_research.jpg", description: "Description for Card 4" },
-        { title: "Card 5", image: "../../assets/dashboard/learnDashboard/learn_recycle.png", description: "Description for Card 5" },
-        { title: "Card 6", image: "../../assets/dashboard/learnDashboard/learn_park.png", description: "Description for Card 6" },
-        { title: "Card 7", image: "../../assets/dashboard/learnDashboard/learn_garden.png", description: "Description for Card 7" },
-        { title: "Card 8", image: "../../assets/dashboard/learnDashboard/learn_fish.png", description: "Description for Card 8" },
-        { title: "Card 9", image: "../../assets/dashboard/learnDashboard/learn_family.png", description: "Description for Card 9" },
-        { title: "Card 10", image: "../../assets/dashboard/learnDashboard/learn_dolphin.png", description: "Description for Card 10" },
-        { title: "Card 11", image: "../../assets/dashboard/learnDashboard/learn_bank.png", description: "Description for Card 11" },
-        { title: "Card 12", image: "../../assets/dashboard/learnDashboard/learn_foodbank.jpg", description: "Description for Card 12" },
+        { title: "Card 1", image: learnFoodbank, description: "Fighting Hunger: Kids Volunteering at Food Shelters" },
+        { title: "Card 2", image: learnSlide, description: "The Joy of Play: How Happy Moments Foster Well-Being" },
+        { title: "Card 3", image: learnSchool, description: "Learning Across Borders: Children’s Global Education Journey" },
+        { title: "Card 4", image: learnResearch, description: "Exploring Nature: Kids Conducting Creek Research" },
+        { title: "Card 5", image: learnRecycle, description: "Recycle and Play: Teaching Kids Sustainability Through Fun" },
+        { title: "Card 6", image: learnPark, description: "The Playground Effect: How Play Enhances Health"},
+        { title: "Card 7", image: learnGarden, description: "Growing Together: Kids Cultivating Green Spaces" },
+        { title: "Card 8", image: learnFish, description: "Aquatic Adventures: Kids Engaging with Nature in the Pond" },
+        { title: "Card 9", image: learnFamily, description: "The Heart of the Field: A Mother and Daughter’s Connection to Nature" },
+        { title: "Card 10", image: learnDolphin, description: "Underwater Wonders: Exploring the Ocean with Dolphins" },
+        { title: "Card 11", image: learnBank, description: "Healthy Waterways: How Canals and Fish Indicate Ecosystem Health" },
+        { title: "Card 12", image: learnFoodbank, description: "Building a Sustainable Future: Cities with Waterways at the Core" },
     ];
 
     const cardsPerPage = 4;
@@ -38,22 +52,26 @@ function LearnDashboard() {
 
     return (
         <div className="dashboard-container">
-            <Header /> {/* Always Show Header */}
+            <Header />
 
             <div className="content-wrapper">
+                {/* Chat icon */}
+                <div className="chat-icon-container">
+                    <img src={chatIcon} alt="Chat Icon" className="chat-icon" />
+                </div>
                 <h2 className="section-title">FEATURED ARTICLES</h2>
                 <div className="card-grid grid-2">
                     <div className="card">
                         <div className="photo-container">
-                            <img src="../../assets/dashboard/learnDashboard/learn_foodbank.jpg" alt="Card 1" />
+                            <img src={learnFoodbank} alt="Card 1" />
                         </div>
-                        <div className="card-text">Card 1 Description</div>
+                        <div className="card-text">Fighting Hunger: Kids Volunteering at Food Shelters (SDG 2: Zero Hunger)</div>
                     </div>
                     <div className="card">
                         <div className="photo-container">
-                            <img src="../../assets/dashboard/learnDashboard/learn_slide.png" alt="Card 2" />
+                            <img src={learnSlide} alt="Card 2" />
                         </div>
-                        <div className="card-text">Card 2 Description</div>
+                        <div className="card-text">The Joy of Play: How Happy Moments Foster Well-Being (SDG 3: Good Health and Well-being)</div>
                     </div>
                 </div>
 
@@ -61,21 +79,21 @@ function LearnDashboard() {
                 <div className="card-grid grid-3">
                     <div className="card">
                         <div className="photo-container">
-                            <img src="../../assets/dashboard/learnDashboard/learn_school.jpg" alt="Card 3" />
+                            <img src={learnSchool} alt="Card 3" />
                         </div>
-                        <div className="card-text">Card 3 Description</div>
+                        <div className="card-text">Learning Across Borders: Children’s Global Education Journey (SDG 4: Quality Education)</div>
                     </div>
                     <div className="card">
                         <div className="photo-container">
-                            <img src="../../assets/dashboard/learnDashboard/learn_research.jpg" alt="Card 4" />
+                            <img src={learnResearch} alt="Card 4" />
                         </div>
-                        <div className="card-text">Card 4 Description</div>
+                        <div className="card-text">Exploring Nature: Kids Conducting Creek Research (SDG 6: Clean Water and Sanitation)</div>
                     </div>
                     <div className="card">
                         <div className="photo-container">
-                            <img src="../../assets/dashboard/learnDashboard/learn_recycle.png" alt="Card 5" />
+                            <img src={learnRecycle} alt="Card 5" />
                         </div>
-                        <div className="card-text">Card 5 Description</div>
+                        <div className="card-text">Recycle and Play: Teaching Kids Sustainability Through Fun (SDG 12: Responsible Consumption and Production)</div>
                     </div>
                 </div>
 
@@ -118,41 +136,40 @@ function LearnDashboard() {
                 <div className="card-grid grid-3">
                     <div className="card">
                         <div className="photo-container">
-                            <img src="../../assets/dashboard/learnDashboard/learn_park.png" alt="Card 6" />
+                            <img src={learnPark} alt="Card 6" />
                         </div>
-                        <div className="card-text">Card 6 Description</div>
+                        <div className="card-text">The Playground Effect: How Play Enhances Health (SDG 3: Good Health and Well-being)</div>
                     </div>
                     <div className="card">
                         <div className="photo-container">
-                            <img src="../../assets/dashboard/learnDashboard/learn_garden.png" alt="Card 7" />
+                            <img src={learnGarden} alt="Card 7" />
                         </div>
-                        <div className="card-text">Card 7 Description</div>
+                        <div className="card-text">Growing Together: Kids Cultivating Green Spaces (SDG 15: Life on Land)</div>
                     </div>
                     <div className="card">
                         <div className="photo-container">
-                            <img src="../../assets/dashboard/learnDashboard/learn_fish.png" alt="Card 8" />
+                            <img src={learnFish} alt="Card 8" />
                         </div>
-                        <div className="card-text">Card 8 Description</div>
+                        <div className="card-text">Aquatic Adventures: Kids Engaging with Nature in the Pond (SDG 14: Life Below Water)</div>
                     </div>
                     <div className="card">
                         <div className="photo-container">
-                            <img src="../../assets/dashboard/learnDashboard/learn_family.png" alt="Card 9" />
+                            <img src={learnFamily} alt="Card 9" />
                         </div>
-                        <div className="card-text">Card 9 Description</div>
+                        <div className="card-text">The Heart of the Field: A Mother and Daughter’s Connection to Nature (SDG 2: Zero Hunger)</div>
                     </div>
                     <div className="card">
                         <div className="photo-container">
-                            <img src="../../assets/dashboard/learnDashboard/learn_dolphin.png" alt="Card 10" />
+                            <img src={learnDolphin} alt="Card 10" />
                         </div>
-                        <div className="card-text">Card 10 Description</div>
+                        <div className="card-text">Underwater Wonders: Exploring the Ocean with Dolphins (SDG 14: Life Below Water)</div>
                     </div>
                     <div className="card">
                         <div className="photo-container">
-                            <img src="../../assets/dashboard/learnDashboard/learn_bank.png" alt="Card 11" />
+                            <img src={learnBank} alt="Card 11" />
                         </div>
-                        <div className="card-text">Card 11 Description</div>
+                        <div className="card-text">Healthy Waterways: How Canals and Fish Indicate Ecosystem Health (SDG 6: Clean Water and Sanitation)</div>
                     </div>
-                    
                 </div>
             </div>
         </div>
