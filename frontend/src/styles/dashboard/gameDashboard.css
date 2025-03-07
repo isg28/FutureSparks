@@ -23,6 +23,7 @@
 .game-card {
     background: white;
     border-radius: 10px;
+    border: 2px solid #87CEEB; 
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     padding: 15px;
     text-align: center;
@@ -32,13 +33,15 @@
     min-height: 300px;
     position: relative;
     overflow: hidden;
+    transition: border-color 0.3s ease;
 }
 
 .game-card:hover {
     transform: scale(1.05);
+    border-color: #98FB98; 
 }
 
-/* Big firework effect (from earlier version) */
+/* Big firework effect */
 .game-card:hover::after {
     content: '';
     position: absolute;
@@ -56,7 +59,7 @@
     animation: bigFirework 1s infinite;
 }
 
-/* Firework particles - moved down */
+/* Firework particles */
 .game-card:hover::before,
 .game-card:hover .firework-1,
 .game-card:hover .firework-2,
@@ -128,59 +131,59 @@
     animation-delay: 0.35s;
 }
 
-/* Position the fireworks - moved down significantly */
+/* Position the fireworks */
 .game-card:hover::before {
-    top: 60%; /* Was 10% */
-    left: 15%;
-}
-
-.game-card:hover .firework-1 {
-    top: 65%; /* Was bottom: 15% */
+    top: 20%;
     left: 25%;
 }
 
-.game-card:hover .firework-2 {
-    top: 70%; /* Was 35% */
-    right: 30%;
+.game-card:hover .firework-1 {
+    top: 30%;
+    left: 10%;
 }
 
-.game-card:hover .firework-3 {
-    top: 75%; /* Was bottom: 25% */
+.game-card:hover .firework-2 {
+    top: 15%;
     left: 40%;
 }
 
+.game-card:hover .firework-3 {
+    top: 50%;
+    left: 20%;
+}
+
 .game-card:hover .firework-4 {
-    top: 80%; /* Was 50% */
+    top: 60%;
     right: 15%;
 }
 
 .game-card:hover .firework-5 {
-    top: 85%; /* Was bottom: 35% */
-    left: 60%;
-}
-
-.game-card:hover .firework-6 {
-    top: 90%; /* Was 60% */
-    right: 40%;
-}
-
-.game-card:hover .firework-7 {
-    top: 70%; /* Was 25% */
+    top: 40%;
     left: 70%;
 }
 
+.game-card:hover .firework-6 {
+    top: 75%;
+    right: 30%;
+}
+
+.game-card:hover .firework-7 {
+    top: 25%;
+    left: 85%;
+}
+
 .game-card:hover .firework-8 {
-    top: 80%; /* Was bottom: 45% */
-    right: 25%;
+    top: 65%;
+    right: 45%;
 }
 
 .game-card:hover .firework-9 {
-    top: 75%; /* Was 40% */
-    left: 10%;
+    top: 45%;
+    left: 35%;
 }
 
 .game-card:hover .firework-10 {
-    top: 85%; /* Was bottom: 10% */
+    top: 80%;
     right: 60%;
 }
 
@@ -260,25 +263,6 @@
     font-size: 14px;
     color: #555;
     word-wrap: break-word;
-    font-family: 'Finger Paint', sans-serif;
-}
-
-/* Additional pseudo-elements for fireworks */
-.game-card {
-    position: relative;
-}
-
-.game-card .firework-1,
-.game-card .firework-2,
-.game-card .firework-3,
-.game-card .firework-4,
-.game-card .firework-5,
-.game-card .firework-6,
-.game-card .firework-7,
-.game-card .firework-8,
-.game-card .firework-9,
-.game-card .firework-10 {
-    position: absolute;
-    width: 0;
-    height: 0;
+    font-family: "Schoolbell", cursive;
+    font-size: 18px;
 }
