@@ -34,6 +34,7 @@ function Login() {
             }
 
             localStorage.setItem("token", data.access);
+            localStorage.setItem("username", formData.login);
             alert("Login successful!");
             navigate("/dashboard");
         } catch (error) {

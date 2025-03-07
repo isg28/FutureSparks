@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users',
+    'gameOne',
     'corsheaders',
     'rest_framework',
 ]
@@ -55,7 +56,9 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',  
+    "http://localhost:3000", 
+    "http://127.0.0.1:3000",
+    "http://localhost:8000", 
 ]
 
 ROOT_URLCONF = 'backend.urls'

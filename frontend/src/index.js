@@ -12,6 +12,8 @@ import Register from './components/account/createAccount';
 import LearnDashboard from './components/dashboard/learnDashboard';
 import Activity from './components/dashboard/activity';
 import GameDashboard from './components/dashboard/gameDashboard';
+import GameOne from './components/games/gameOne';
+import GameTwo from './components/games/gameTwo';
 
 // Import the two click sound effects
 import clickSound1 from './assets/click_sfx.m4a'; 
@@ -56,6 +58,8 @@ function App() {
                 <Route path="/dashboard" element={<LearnDashboard />} />
                 <Route path="/activity" element={<Activity />} />
                 <Route path="/gameDashboard" element={<GameDashboard />} />
+                <Route path="/gameOne" element={<GameOne/>}/>
+                <Route path="/gameTwo" element={<GameTwo/>}/>
             </Routes>
         </Router>
     );

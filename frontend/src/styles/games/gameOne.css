@@ -1,0 +1,392 @@
+*,
+*:before,
+*:after {
+    transform: none !important;
+    zoom: 1 !important;
+}
+
+.game-one-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    min-height: 100vh; 
+    background: linear-gradient(to bottom, #b8d8ff, #c4ffc4);
+    transform: none !important; 
+    zoom: 1; 
+    overflow-y: auto; 
+}
+
+.game-box {
+    width: 80%;
+    background-color: #333; 
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 170px;
+    margin-right: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: none !important; 
+    position: relative; 
+}
+
+.game-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    color: #fff;
+    font-size: 24px;
+    font-family: "Finger Paint", sans-serif;
+    transform: none !important; 
+    z-index: 11; 
+    position: relative;
+}
+
+.game-header .timer-display {
+    font-size: 24px !important;
+    transform: none !important;
+    zoom: 1 !important;
+    -webkit-transform: none !important;
+    -moz-transform: none !important;
+    -ms-transform: none !important; 
+}
+
+/* Game area with curtains and brown background */
+.game-area {
+    position: relative;
+    width: 100%;
+    height: 500px; 
+    background: #8B4513; 
+    border: 1px solid #4682b4; 
+    box-sizing: border-box;
+    overflow: hidden; 
+}
+
+/* Game info section (directly below game-box, no background box) */
+.game-info {
+    width: 80%;
+    padding: 20px;
+    color: #000; 
+    font-family: "Finger Paint", sans-serif;
+    text-align: left; 
+    margin-right: 220px; 
+    margin-bottom: 60px; 
+}
+
+.game-info h2 {
+    font-size: 38px;
+    margin-top: 8px;
+    margin-bottom: 50px;
+}
+
+.game-info h3 {
+    font-size: 30px;
+    margin: 20px 10;
+    text-decoration: underline; 
+}
+
+.game-info p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.wood-stage {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%; 
+    object-fit: cover;
+    z-index: 7;
+}
+
+.curtain-top-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between; 
+    z-index: 10; 
+}
+
+.curtain-top {
+    width: 8%; 
+    height: auto;
+    object-fit: contain; 
+    flex-shrink: 0; 
+}
+
+.curtain-underneathtop {
+    position: absolute;
+    top: 10px; 
+    left: 170px; 
+    width: 10%; 
+    height: auto;
+    object-fit: contain;
+    z-index: 9; 
+}
+
+.curtain-underneathtop-2 {
+    left: 236px;
+}
+
+.curtain-underneathtop-3 {
+    left: 302px; /* 236 + 66px */
+}
+
+.curtain-underneathtop-4 {
+    left: 368px; /* 302 + 66px */
+}
+
+.curtain-underneathtop-5 {
+    left: 434px; /* 368 + 66px */
+}
+
+.curtain-underneathtop-6 {
+    left: 500px; /* 434 + 66px */
+}
+
+.curtain-underneathtop-7 {
+    left: 566px; /* 500 + 66px */
+}
+
+.curtain-underneathtop-8 {
+    left: 632px; /* 566 + 66px */
+}
+
+.curtain-underneathtop-9 {
+    left: 698px; /* 632 + 66px */
+}
+
+.curtain-underneathtop-10 {
+    left: 764px; /* 698 + 66px */
+}
+
+.curtain-underneathtop-11 {
+    left: 830px; /* 764 + 66px */
+}
+
+.curtain-underneathtop-12 {
+    left: 896px; /* 830 + 66px */
+}
+
+.curtain-underneathtop-13 {
+    left: 962px; /* 896 + 66px */
+}
+
+.curtain-underneathtop-14 {
+    left: 1028px; /* 962 + 66px */
+}
+
+.curtain-underneathtop-15 {
+    left: 1094px; /* 1028 + 66px */
+}
+
+.curtain-underneathtop-16 {
+    left: 1094px; /* 962 + 66px */
+}
+
+.curtain-underneathtop-17 {
+    left: 1160px; /* 1028 + 66px */
+}
+
+.curtain-underneathtop-18 {
+    left: 1226px; /* 1028 + 66px */
+}
+
+.curtain-left {
+    position: absolute;
+    top: 30px; 
+    left: -30px;
+    width: 15%; 
+    height: 80%; 
+    object-fit: cover;
+    z-index: 9; 
+}
+
+.curtain-right {
+    position: absolute;
+    top: 30px; 
+    right: -30px;
+    width: 15%; 
+    height: 80%; 
+    object-fit: cover;
+    z-index: 9; 
+}
+
+.game-image {
+    cursor: pointer;
+    width: 150px; 
+    height: 150px;
+    position: absolute; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 8; 
+}
+
+.game-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    transition: transform 0.3s ease;
+}
+
+.game-image.leaking img {
+    animation: shake 0.5s infinite;
+}
+
+.puddle-image {
+    position: absolute;
+    top: 80%; 
+    width: 80px;
+    height: 40px;
+    object-fit: contain;
+    z-index: 8; 
+}
+
+
+.game-image img:hover {
+    transform: scale(1.1); 
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Game Over and Start Screen Styling (Match game-box) */
+.game-over-container {
+    width: 80%;
+    height: 500px; 
+    background-color: #333; 
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 170px;
+    margin-right: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-family: "Finger Paint", sans-serif;
+    font-size: 24px;
+    text-align: center;
+    transform: none !important; 
+}
+
+.game-over-container h1 {
+    margin: 0 0 20px;
+    font-size: 36px;
+}
+
+.game-over-container p {
+    margin: 0 0 30px;
+    font-size: 28px;
+}
+
+.game-over-buttons {
+    display: flex;
+    flex-direction: column; 
+    gap: 15px;
+}
+
+.game-over-container button {
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: "Finger Paint", sans-serif;
+    background-color: #2b9e44;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 150px; 
+    text-align: center;
+}
+
+.game-over-container button:hover {
+    background-color: #218c38;
+}
+
+.leaderboard-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.leaderboard-buttons button {
+    padding: 10px 15px;
+    font-size: 18px;
+    font-family: "Finger Paint", sans-serif;
+    background-color: #2b9e44;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.leaderboard-buttons button.active {
+    background-color: #218c38; 
+}
+
+/* Center Leaderboard with 4 on the left, 4 on the right */
+.leaderboard-list {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.leaderboard-grid {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.leaderboard-left,
+.leaderboard-right {
+    width: 40%;
+    text-align: left;
+    padding-left: 300px;
+    font-size: 20px;
+}
+
+
+.leaderboard-list h2 {
+    font-size: 28px;
+    text-decoration: underline;
+}
+
+/* AI Cursor Styling */
+.ai-cursor {
+    position: absolute;
+    width: 24px; /* Size of the cursor */
+    height: 24px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/></svg>') no-repeat center;
+    background-size: contain;
+    transform: translate(-10%, -10%); /* Adjust to align tip of cursor */
+    transition: all 0.5s ease; /* Smooth movement */
+    z-index: 10; 
+}
