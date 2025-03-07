@@ -112,7 +112,7 @@
     width: 650px;
     height: 550px;
     overflow: visible;
-    animation: rotate-spark-3 2s steps(2) infinite; 
+    animation: rotate-spark-3 2s steps(2) infinite;
     z-index: 3; /* Ensures it's on top of the background and home container */
 }
 

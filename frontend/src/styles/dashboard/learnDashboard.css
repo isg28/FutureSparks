@@ -19,6 +19,7 @@
     font-family: "Schoolbell", cursive;
     letter-spacing: 2px;
     margin: 40px;
+    margin-left: -100px;
     text-align: center;
 }
 
@@ -29,15 +30,37 @@
 }
 
 .grid-2 {
-    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    margin-left: 140px;
+    grid-template-columns: 1fr 0.5fr 1fr; /* Middle space takes up 0.5fr */
+}
+
+.grid-2 .card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0px;
+    text-align: center;
+    width: 600px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .grid-3 {
     grid-template-columns: repeat(3, 1fr);
+    margin-top: 100px;
+    margin-right: 200px; /* Reduced margin-right */
+    margin-left: 30px; /* Reduced margin-left */
+    gap: 60px; /* Reduced gap between cards */
 }
 
 .card {
     background: white;
+    border: 5px solid #59c5ff;
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     padding: 15px;
@@ -49,26 +72,47 @@
     align-items: center;
     font-size: 16px;
     font-weight: bold;
+    flex-direction: column; /* Allows stacking the content */
 }
 
-/* Carousel Container with enough height */
+.photo-container {
+    background: #f0f0f0; /* Light background for photo area */
+    width: 100%;
+    height: 80%; /* Take up most of the card height */
+    border-radius: 8px; /* Slight rounding to the photo area */
+    border: 4px solid #ddd; /* Border to mimic the Polaroid effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px; /* Space between photo and the caption */
+}
+
+.card-text {
+    text-align: center;
+    font-size: 30px;
+    font-family: "Schoolbell", cursive;
+    color: #000000;
+    font-weight: normal;
+    padding: 10px 0;
+}
+
 .carousel-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    max-width: 800px;
+    width: 1300px;
+    max-width: 3000px;
+    margin-left: 70px;
+    margin-right: 10px;
     position: relative;
     background-color: aliceblue;
-    height: 300px; /* Ensure this is large enough */
+    height: 500px;
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
 
-
-/* Carousel Wrapper */
 .carousel {
     display: flex;
     justify-content: center;
@@ -78,10 +122,9 @@
     flex-grow: 1;
 }
 
-/* Cards inside the carousel */
 .carousel .card {
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 375px;
     background: white;
     border-radius: 10px;
     display: flex;
@@ -91,7 +134,6 @@
     font-weight: bold;
 }
 
-/* Arrow Buttons */
 .carousel-arrow {
     position: absolute;
     top: 50%;
@@ -102,7 +144,7 @@
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    font-size: 24px;
+    font-size: 50px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -112,25 +154,23 @@
 }
 
 .carousel-arrow.left {
-    left: 0px;
+    left: 20px;
 }
 
 .carousel-arrow.right {
-    right: 0px;
+    right: 20px;
 }
 
-/* Dot Navigation correctly inside carousel container */
 .carousel-dots {
     position: relative;
-    bottom: -320px; /* Adjust the distance from the bottom of the carousel */
-    left: 50%;
+    bottom: 40px;
+    left: -6%;
     transform: translateX(-50%);
     display: flex;
     justify-content: center;
     gap: 10px;
-    z-index: 10; /* Make sure the dots are above other elements */
+    z-index: 10;
 }
-
 
 .dot {
     width: 12px;
